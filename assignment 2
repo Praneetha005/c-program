@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int n, highest, second_highest, num;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    printf("Enter element 1: ");
+    scanf("%d", &highest);
+    printf("Enter element 2: ");
+    scanf("%d", &num);
+    if (num > highest) {
+        second_highest = highest;
+        highest = num;
+    } else {
+        second_highest = num;
+    }
+    for (int i = 3; i <= n; i++) {
+        printf("Enter element %d: ", i);
+        scanf("%d", &num);
+        if (num > highest) {
+            second_highest = highest;
+            highest = num;
+        } else if (num > second_highest) {
+            second_highest = num;
+        }
+    }
+    printf("The second highest number is: %d", second_highest);
+}
